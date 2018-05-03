@@ -1,0 +1,24 @@
+.sidebar {
+    max-width: 320px;
+    background-color: #eeeeee;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar > div + div {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    padding: 0 !important;
+}
+
+.user-list {
+    height: inherit;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 30px;
+}
+
+.user-list p {
+    height: auto !important;
+}

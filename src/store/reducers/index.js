@@ -15,9 +15,7 @@ export const users = (state = initialState, action) => {
         case ActionTypes.SINGLE_USER:
             return {
                 ...state,
-                user: state.users.filter((user, index, arr)  => {
-                    return index === action.id;
-                })
+                user: action.user
             }
         default: 
             return state;

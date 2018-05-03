@@ -1,11 +1,13 @@
 import axios from 'axios';
 
 export function getUsers() {
-    axios.get(`/users.json`)
-        .then(json => {
-            console.log(json);
-          })
-        .catch(function (error) {
-            console.log(error);
-        });
+    return new Promise((resolve, reject) => {
+        axios.get(`/users.json`)
+            .then(({data}) => {
+                resolve(data);
+            })
+            .catch(function (error) {
+                reject(error);
+            });
+    })
 }
