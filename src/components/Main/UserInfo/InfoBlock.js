@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InfoBlock = () => {
+const InfoBlock = ({ address, contact }) => {
     return (
         <div>
             

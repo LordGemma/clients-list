@@ -1,10 +1,18 @@
 import React from 'react';
+import { CardTitle } from 'material-ui/Card';
+import Aux from '../../../containers/SideBar/Aux';
 
-const MainInfo = () => {
+const MainInfo = ({ general, job }) => {
     return (
-        <div>
-            
-        </div>
+        <Aux>
+            {
+                (general && job) ?
+                    <Aux>
+                        <CardTitle title={`${general.firstName} ${general.lastName}`} subtitle={`${job.title} - ${job.company}`} />
+                    </Aux>
+                    : <div></div>
+            }
+        </Aux>
     );
 };
 

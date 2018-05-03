@@ -2,17 +2,17 @@ import React from 'react';
 import Avatar from 'material-ui/Avatar';
 import Aux from '../../../containers/SideBar/Aux';
 
-const Image = (props) => {
+const Image = ({general}) => {
     const style = {margin: 5};
 
     return (
         <Aux>
             { 
-                props.general ?
+                general ?
                 <Avatar
-                src={props.general.avatar}
-                size={128}
-                style={style}
+                    src={general.avatar}
+                    size={128}
+                    style={style}
                 />
                 : <div></div>
             }
