@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-import UserList from '../../components/SideBar/Users/UserList';
-import { getUser } from '../../store/actions/users';
+import UserInfo from '../../components/Main/UserInfo/UserInfo';
 
 function mapStateToProps(state) {
-    const { users: { user } } = state;
+    const { user } = state.users
     return {
         user
     };
@@ -11,10 +10,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getUser: (id, users) => dispatch(getUser(id, users)),
+
     };
 }
 
 export default connect(
     mapStateToProps, mapDispatchToProps
-)(UserList);
+)(UserInfo);

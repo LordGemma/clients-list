@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SideBar from '../../components/SideBar/SideBar';
 import { getAllUsers } from '../../store/actions/users';

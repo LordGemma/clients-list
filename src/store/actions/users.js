@@ -15,7 +15,11 @@ export const getAllUsers = () => {
                 dispatch({
                     type: ALL_USERS,
                     users: userList
-                })
+                });
+                dispatch({
+                    type: SINGLE_USER,
+                    user: userList[0]
+                });
             } )
             .catch ( error => {
                 console.log(error);
@@ -31,7 +35,6 @@ export const getUser = (id, users) => {
     const user = users.find(item => {
         return item.id === id
     });
-    console.log(user);
     return {
         type: SINGLE_USER,
         user: user
