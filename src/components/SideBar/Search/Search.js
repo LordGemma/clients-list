@@ -42,20 +42,25 @@ class Search extends Component {
             value: e.target.value
         }, () => {
             const arr = this.props.users.filter(item => {
-                return this.isObject(item);
+                const regex = new RegExp(this.state.value.toLowerCase(), "ig");
+                if (typeof item !== 'object') {
+                    return regex.test(item.toLowerCase());
+                }
+                return this.isObject(item); 
             });
-            console.log(arr)
             this.props.filterUsers(arr);
         });
     }
 
     isObject(obj) {
+        const regex = new RegExp(this.state.value.toLowerCase(), "ig");
         for (let key in obj) {
-            if (typeof obj[key] === 'string') {
-                const regex = new RegExp(this.state.value, 'g');
-                return regex.test(obj[key]);
+            if (typeof obj[key] !== 'object') {
+                return regex.test(obj[key].toLowerCase());
             } else {
-                this.isObject(obj[key]);
+               for (let el in obj[key]) {
+                return regex.test(obj[key][el].toLowerCase());
+               }
             }
         }
     }
