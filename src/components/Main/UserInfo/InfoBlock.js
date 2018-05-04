@@ -5,7 +5,6 @@ import Divider from 'material-ui/Divider';
 import Aux from '../../../containers/SideBar/Aux';
 
 const InfoBlock = (props) => {
-    console.log(props);
     return (
         <List>
             <Subheader>{props.title}</Subheader>
@@ -13,8 +12,8 @@ const InfoBlock = (props) => {
                 props.data ?
                 Object.keys(props.data).map( (item, index, arr) => {
                     return (
-                        <Aux>
-                            <ListItem key={index} primaryText={`${item.charAt(0).toUpperCase() + item.slice(1)}: ${props.data[item]}`} />
+                        <Aux key={index}>
+                            <ListItem disabled={true} primaryText={`${item.charAt(0).toUpperCase() + item.slice(1)}: ${props.data[item]}`} />
                             <Divider />
                         </Aux>
                     )

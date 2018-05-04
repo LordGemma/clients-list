@@ -1,12 +1,13 @@
 import React from 'react';
 
 import UserListCont from '../../containers/SideBar/UserListCont';
+import Search from './Search/Search';
 import './Sidebar.css'
 
 const SideBar = (props) => {
   return (
     <div className="sidebar">
-      <div>Search</div>
+      <Search />
       <UserListCont {...props} />
     </div>
   );

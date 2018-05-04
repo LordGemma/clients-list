@@ -8,7 +8,10 @@ const MainInfo = ({ general, job }) => {
             {
                 (general && job) ?
                     <Aux>
-                        <CardTitle title={`${general.firstName} ${general.lastName}`} subtitle={`${job.title} - ${job.company}`} />
+                        <CardTitle 
+                            title={`${general.firstName} ${general.lastName}`} 
+                            subtitle={`${job.title} ― ${job.company}`} 
+                        />
                     </Aux>
                     : <div></div>
             }

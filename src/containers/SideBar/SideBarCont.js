@@ -3,9 +3,9 @@ import SideBar from '../../components/SideBar/SideBar';
 import { getAllUsers } from '../../store/actions/users';
 
 function mapStateToProps(state) {
-    const { users: { users } } = state;
+    const { users: { filteredUsers } } = state;
     return {
-        users
+        filteredUsers
     };
 }
 

@@ -16,7 +16,7 @@ class UserList extends Component {
                     <Subheader>Clients</Subheader>
                     <div className="user-list">
                         {
-                            this.props.users && this.props.users.map( ( item, index, arr ) => {
+                            this.props.filteredUsers && this.props.filteredUsers.map( ( item, index, arr ) => {
                                 return <User 
                                             click={() => this.props.getUser(item.id, arr)} 
                                             key={item.id} 

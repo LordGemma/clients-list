@@ -2,7 +2,8 @@ import * as ActionTypes from '../actions/actionTypes';
 
 const initialState = {
     users: [],
-    user: {}
+    user: {},
+    filteredUsers: []
 }
 
 export const users = (state = initialState, action) => {
@@ -16,6 +17,11 @@ export const users = (state = initialState, action) => {
             return {
                 ...state,
                 user: action.user
+            }
+        case ActionTypes.FILTERED_USERS:
+            return {
+                ...state,
+                filteredUsers: action.users
             }
         default: 
             return state;
